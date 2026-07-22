@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://dhw8rsarnv0nv"]
+
+[ext_resource type="Script" uid="uid://clefkjhomv4dv" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="Texture2D" uid="uid://cosf5gxpafawy" path="res://spikes_red.png" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://n8o6mkuh5jpd" path="res://character.tscn" id="2_0xm2m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1pk3o"]
+size = Vector2(1520, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
+size = Vector2(462.5, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpm5h"]
+size = Vector2(221.22545, 15.849701)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2f076"]
+size = Vector2(146.5, 27)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1pk3o"]
+radius = 22.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_au63g"]
+size = Vector2(214, 42)
+
+[node name="Node2D" type="Node2D" unique_id=565959018]
+script = ExtResource("1_h2yge")
+
+[node name="floor" type="StaticBody2D" parent="." unique_id=1915134992]
+position = Vector2(560, 628)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=867774699]
+shape = SubResource("RectangleShape2D_1pk3o")
+
+[node name="ColorRect" type="ColorRect" parent="floor" unique_id=151126703]
+offset_left = -760.0
+offset_top = -10.0
+offset_right = 760.0
+offset_bottom = 10.0
+
+[node name="floor2" type="StaticBody2D" parent="." unique_id=264804873]
+position = Vector2(560, 628)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor2" unique_id=1952957985]
+position = Vector2(-441.25, -44)
+shape = SubResource("RectangleShape2D_ig7tw")
+
+[node name="ColorRect" type="ColorRect" parent="floor2" unique_id=370541364]
+offset_left = -672.0
+offset_top = -76.0
+offset_right = -209.0
+offset_bottom = -10.0
+
+[node name="floor3" type="StaticBody2D" parent="." unique_id=1885281690]
+position = Vector2(1447, 628)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor3" unique_id=762850010]
+position = Vector2(-441.25, -44)
+shape = SubResource("RectangleShape2D_ig7tw")
+
+[node name="ColorRect" type="ColorRect" parent="floor3" unique_id=1671755896]
+offset_left = -672.0
+offset_top = -76.0
+offset_right = -209.0
+offset_bottom = -10.0
+
+[node name="spikes" type="Node2D" parent="." unique_id=411503381]
+position = Vector2(398.01086, 601)
+scale = Vector2(1.880434, 1.880434)
+
+[node name="spike" type="Sprite2D" parent="spikes" unique_id=1560043551]
+texture = ExtResource("1_ig7tw")
+
+[node name="spike2" type="Sprite2D" parent="spikes" unique_id=1921773589]
+position = Vector2(44.138733, 0)
+texture = ExtResource("1_ig7tw")
+
+[node name="spike3" type="Sprite2D" parent="spikes" unique_id=437654711]
+position = Vector2(87.74568, 0)
+texture = ExtResource("1_ig7tw")
+
+[node name="spike4" type="Sprite2D" parent="spikes" unique_id=986447453]
+position = Vector2(131.88445, 0)
+texture = ExtResource("1_ig7tw")
+
+[node name="spike5" type="Sprite2D" parent="spikes" unique_id=591877568]
+position = Vector2(176.01741, 0)
+texture = ExtResource("1_ig7tw")
+
+[node name="spike-detect" type="Area2D" parent="spikes" unique_id=1590617850]
+position = Vector2(86.14455, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/spike-detect" unique_id=204086550]
+position = Vector2(1.5953369, 2.0751343)
+shape = SubResource("RectangleShape2D_cpm5h")
+
+[node name="CharacterBody2D" parent="." unique_id=158029817 instance=ExtResource("2_0xm2m")]
+position = Vector2(176, 470)
+scale = Vector2(0.5, 0.5)
+
+[node name="platform" type="StaticBody2D" parent="." unique_id=780185105]
+position = Vector2(0, 434)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform" unique_id=1421514957]
+position = Vector2(72.75, 14.5)
+shape = SubResource("RectangleShape2D_2f076")
+
+[node name="ColorRect" type="ColorRect" parent="platform" unique_id=1253350009]
+offset_right = 146.0
+offset_bottom = 28.0
+
+[node name="platform2" type="StaticBody2D" parent="." unique_id=1963508743]
+position = Vector2(218, 347)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform2" unique_id=1720206351]
+position = Vector2(72.75, 14.5)
+shape = SubResource("RectangleShape2D_2f076")
+
+[node name="ColorRect" type="ColorRect" parent="platform2" unique_id=762885679]
+offset_right = 146.0
+offset_bottom = 28.0
+
+[node name="platform3" type="StaticBody2D" parent="." unique_id=2113511123]
+position = Vector2(0, 244)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform3" unique_id=195052219]
+position = Vector2(72.75, 14.5)
+shape = SubResource("RectangleShape2D_2f076")
+
+[node name="ColorRect" type="ColorRect" parent="platform3" unique_id=1474672277]
+offset_right = 146.0
+offset_bottom = 28.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1081646558]
+offset_left = 1018.0
+offset_top = 380.0
+offset_right = 1142.0
+offset_bottom = 553.0
+color = Color(0.5598435, 0.96573013, 0, 1)
+
+[node name="switch" type="ColorRect" parent="." unique_id=253009442]
+offset_top = 188.0
+offset_right = 40.0
+offset_bottom = 228.0
+color = Color(0.42947987, 0.77627486, 1, 1)
+
+[node name="Area2D" type="Area2D" parent="switch" unique_id=365518146]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="switch/Area2D" unique_id=309018283]
+position = Vector2(19, 20)
+shape = SubResource("CircleShape2D_1pk3o")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1068232062]
+position = Vector2(460, 250)
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=282770580]
+position = Vector2(97, 11)
+shape = SubResource("RectangleShape2D_au63g")
+
+[node name="ColorRect" type="ColorRect" parent="RigidBody2D" unique_id=767378325]
+offset_left = -9.0
+offset_top = -9.0
+offset_right = 203.0
+offset_bottom = 31.0
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=500786213]
+offset_left = 398.0
+offset_top = 86.0
+offset_right = 714.0
+offset_bottom = 113.0
+value = 100.0
+
+[connection signal="body_entered" from="switch/Area2D" to="." method="_on_area_2d_body_entered"]
