@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b032hxjcih0ih"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_au63g"]
+size = Vector2(127, 114)
+
+[node name="box" type="RigidBody2D" unique_id=663915370 groups=["box"]]
+mass = 50.0
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=652740185]
+position = Vector2(53.5, 47)
+shape = SubResource("RectangleShape2D_au63g")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=976626740]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 117.0
+offset_bottom = 104.0
+color = Color(0.9242293, 0.34526253, 3.85046e-07, 1)
