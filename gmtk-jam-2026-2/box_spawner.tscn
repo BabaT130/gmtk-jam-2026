@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://by681crk084pn"]
-
-[ext_resource type="Script" uid="uid://tu3ahhe2nwpx" path="res://box_spawner.gd" id="1_poabq"]
-
-[node name="spawner" type="Node2D" unique_id=1900464570]
-script = ExtResource("1_poabq")
-
-[node name="Marker2D" type="Marker2D" parent="." unique_id=1190123171]
