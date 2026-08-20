@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://dir7mrperhf2l"]
+
+[ext_resource type="PackedScene" uid="uid://n8o6mkuh5jpd" path="res://character.tscn" id="1_uuuf0"]
+[ext_resource type="Script" uid="uid://clefkjhomv4dv" path="res://main.gd" id="2_pc862"]
+[ext_resource type="Script" uid="uid://b2aopk8qra3bk" path="res://area_2d.gd" id="3_77yi3"]
+[ext_resource type="Script" uid="uid://dg06h52bl4uld" path="res://bebomanzanas.gd" id="3_a1q2r"]
+[ext_resource type="Script" uid="uid://d3g4yaodem8r1" path="res://wall.gd" id="5_hr1cl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pc862"]
+size = Vector2(307.25, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1q2r"]
+size = Vector2(1520, 28)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pc862"]
+radius = 22.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pc6ng"]
+size = Vector2(422.5, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ai02"]
+size = Vector2(20, 233)
+
+[node name="Node2D" type="Node2D" unique_id=1620928440]
+script = ExtResource("2_pc862")
+
+[node name="platform3" type="StaticBody2D" parent="." unique_id=2064282565]
+position = Vector2(609, 336)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform3" unique_id=231937508]
+position = Vector2(387, -88)
+shape = SubResource("RectangleShape2D_pc862")
+
+[node name="ColorRect" type="ColorRect" parent="platform3" unique_id=1435017914]
+offset_left = 234.0
+offset_top = -103.0
+offset_right = 542.0
+offset_bottom = -75.0
+
+[node name="floor" type="StaticBody2D" parent="." unique_id=1909434990]
+position = Vector2(560, 628)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=1718181984]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_a1q2r")
+
+[node name="ColorRect" type="ColorRect" parent="floor" unique_id=655309070]
+offset_left = -760.0
+offset_top = -10.0
+offset_right = 760.0
+offset_bottom = 20.0
+
+[node name="platform5" type="StaticBody2D" parent="." unique_id=631843592]
+position = Vector2(845, 259)
+
+[node name="CharacterBody2D" parent="." unique_id=1721716073 instance=ExtResource("1_uuuf0")]
+position = Vector2(383, 250)
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1473509738]
+offset_left = 398.0
+offset_top = 86.0
+offset_right = 714.0
+offset_bottom = 113.0
+value = 100.0
+show_percentage = false
+
+[node name="respawn-point" type="Marker2D" parent="." unique_id=564901399]
+position = Vector2(383, 250)
+
+[node name="switch" type="ColorRect" parent="." unique_id=189158819]
+offset_left = 1111.0
+offset_top = 502.0
+offset_right = 1151.0
+offset_bottom = 542.0
+color = Color(0.42947987, 0.77627486, 1, 1)
+
+[node name="Area2D" type="Area2D" parent="switch" unique_id=1357715745]
+script = ExtResource("3_77yi3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="switch/Area2D" unique_id=1650449145]
+position = Vector2(19, 20)
+shape = SubResource("CircleShape2D_pc862")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=30854385]
+offset_left = 1026.0
+offset_top = 65.0
+offset_right = 1150.0
+offset_bottom = 238.0
+color = Color(0.5598435, 0.96573013, 0, 1)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=741723252]
+position = Vector2(339, 591)
+script = ExtResource("3_a1q2r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1108497582]
+position = Vector2(211.75, 13)
+shape = SubResource("RectangleShape2D_pc6ng")
+
+[node name="ColorRect" type="ColorRect" parent="AnimatableBody2D" unique_id=746288412]
+offset_right = 423.0
+offset_bottom = 26.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1943975041]
+script = ExtResource("5_hr1cl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1054425376]
+position = Vector2(853, 116.5)
+shape = SubResource("RectangleShape2D_6ai02")
+
+[connection signal="body_shape_entered" from="switch/Area2D" to="." method="_on_area_2d_body_shape_entered"]
