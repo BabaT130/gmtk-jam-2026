@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://bymvjewr8y54l"]
+
+[ext_resource type="FontFile" uid="uid://cnf34be6q7ro1" path="res://Barlow,Quantico,Sue_Ellen_Francisco/Barlow/Barlow-Black.ttf" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://dl7ky3aedwlgv" path="res://start.gd" id="2_7vrkn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu7sn"]
+bg_color = Color(1, 0.4158947, 0.9912471, 1)
+
+[sub_resource type="Theme" id="Theme_06t4h"]
+Button/fonts/font = ExtResource("1_06t4h")
+ProgressBar/colors/font_color = Color(0.30417982, 0.23634681, 0.2579421, 1)
+ProgressBar/styles/background = SubResource("StyleBoxFlat_7vrkn")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_fu7sn")
+
+[node name="Control" type="Control" unique_id=1087420542]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1835698756]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(1, 0.6860471, 0.99862534, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1693573688]
+layout_mode = 0
+offset_top = 190.0
+offset_right = 1152.0
+offset_bottom = 298.0
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 90
+text = "Countdown Reset"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=768331832]
+layout_mode = 0
+offset_left = 502.0
+offset_top = 436.0
+offset_right = 634.0
+offset_bottom = 478.0
+theme = SubResource("Theme_06t4h")
+text = "PLAY"
+script = ExtResource("2_7vrkn")
+
+[node name="switch" type="ColorRect" parent="." unique_id=128099625]
+layout_mode = 0
+offset_top = 378.0
+offset_right = 40.0
+offset_bottom = 418.0
+scale = Vector2(3, 3)
+color = Color(0.9254902, 0.34509805, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="switch" unique_id=181446061]
+layout_mode = 0
+offset_top = -8.0
+offset_right = 19.0
+offset_bottom = 49.0
+color = Color(0, 0, 0, 1)
+
+[node name="switch4" type="ColorRect" parent="." unique_id=649517506]
+layout_mode = 0
+offset_top = 130.0
+offset_right = 40.0
+offset_bottom = 170.0
+scale = Vector2(3, 3)
+color = Color(1, 0.80784315, 0.019607844, 1)
+
+[node name="ColorRect" type="ColorRect" parent="switch4" unique_id=634191376]
+layout_mode = 0
+offset_top = -8.0
+offset_right = 19.0
+offset_bottom = 49.0
+color = Color(0, 0, 0, 1)
+
+[node name="switch2" type="ColorRect" parent="." unique_id=1387282279]
+layout_mode = 0
+offset_left = 1032.0
+offset_top = 130.0
+offset_right = 1072.0
+offset_bottom = 170.0
+scale = Vector2(3, 3)
+color = Color(0.8745098, 0, 0.10980392, 1)
+
+[node name="ColorRect" type="ColorRect" parent="switch2" unique_id=477709094]
+layout_mode = 0
+offset_left = 21.333334
+offset_top = -8.0
+offset_right = 40.333336
+offset_bottom = 49.0
+color = Color(0, 0, 0, 1)
+
+[node name="switch3" type="ColorRect" parent="." unique_id=1223309477]
+layout_mode = 0
+offset_left = 1032.0
+offset_top = 378.0
+offset_right = 1072.0
+offset_bottom = 418.0
+scale = Vector2(3, 3)
+color = Color(1, 0.80784315, 0.019607844, 1)
+
+[node name="ColorRect" type="ColorRect" parent="switch3" unique_id=1563411884]
+layout_mode = 0
+offset_left = 21.333334
+offset_top = -8.0
+offset_right = 40.333336
+offset_bottom = 49.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1342043249]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 66.0
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect2" unique_id=5160722]
+layout_mode = 0
+offset_top = 583.0
+offset_right = 1152.0
+offset_bottom = 649.0
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://xup254mw4lou"]
+
+[ext_resource type="FontFile" uid="uid://cnf34be6q7ro1" path="res://Barlow,Quantico,Sue_Ellen_Francisco/Barlow/Barlow-Black.ttf" id="1_weimh"]
+[ext_resource type="Script" uid="uid://cshj6mo5yhy1v" path="res://end.gd" id="2_5q2h6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
+bg_color = Color(1, 0.4158947, 0.9912471, 1)
+
+[sub_resource type="Theme" id="Theme_8aegd"]
+Button/fonts/font = ExtResource("1_weimh")
+ProgressBar/colors/font_color = Color(0.30417982, 0.23634681, 0.2579421, 1)
+ProgressBar/styles/background = SubResource("StyleBoxFlat_1bvp3")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_lquwl")
+
+[node name="Control" type="Control" unique_id=437165728]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=439159569]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(1, 0.6860471, 0.99862534, 1)
+
+[node name="Label" type="Label" parent="." unique_id=439101697]
+layout_mode = 0
+offset_top = 138.0
+offset_right = 1152.0
+offset_bottom = 246.0
+theme_override_fonts/font = ExtResource("1_weimh")
+theme_override_font_sizes/font_size = 90
+text = "You Win!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=416271343]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 382.0
+offset_right = 633.0
+offset_bottom = 424.0
+theme = SubResource("Theme_8aegd")
+text = "RETURN TO MENU"
+script = ExtResource("2_5q2h6")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=505624376]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 66.0
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect2" unique_id=517581596]
+layout_mode = 0
+offset_top = 583.0
+offset_right = 1152.0
+offset_bottom = 649.0
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
